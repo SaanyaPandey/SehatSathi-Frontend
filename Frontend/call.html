@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call - SehatSathi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style9.css">
+</head>
+<body>
+  <h1>SehatSathi Call Facility</h1>
+  <div class="contact-list">
+    <h3>Contacts</h3>
+    <div class="contact">
+     <!--This will have contact list from DataBase but roght now we have a static data.-->
+     <button class="cont" onclick="selectContact(this)">Sakshi Mittal</button><br>
+     <button class="cont" onclick="selectContact(this)">Ishita Singh</button><br>
+     <button class="cont" onclick="selectContact(this)">Imran Khan</button><br>
+     <button class="cont" onclick="selectContact(this)">Rahul Sharma</button><br>
+  </div>
+  </div>
+  <div class="username">Name</div>
+  <div class="call">
+    <i class="fa-solid fa-square-phone fa-beat fa-6x" style="color: #4bfb28;"></i>
+  </div>
+  <div id="back"><a href="callchat.html">Back</a></div>
+  <script>
+  function selectContact(element) {
+    const selectedName = element.innerText; // Get the clicked contact's name
+    document.getElementsByClassName("username")[0].innerText = selectedName;
+  
+  // remove 'active' class from all buttons
+  document.querySelectorAll(".cont").forEach(btn => btn.classList.remove("active"));
+  // add 'active' class to selected button
+  element.classList.add("active");
+}
+</script>
+
+</body>
+</html>

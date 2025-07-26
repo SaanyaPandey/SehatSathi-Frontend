@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SehatSathi Chat</title>
+  <link rel="stylesheet" href="style8.css" />
+</head>
+<body>
+  <div id="contacts">
+    <h3>Contacts</h3><hr>
+    <div id="contact-list">
+      <button class="cont" onclick="selectContact(this)">Sakshi Mittal</button><br>
+      <button class="cont" onclick="selectContact(this)">Imran Khan</button><br>
+      <button class="cont" onclick="selectContact(this)">Rahul Sharma</button><br>
+      <button class="cont" onclick="selectContact(this)">Ishita Singla</button><br>
+    </div>
+  </div>
+  
+    <header>
+      <h1>SehatSathi Chat</h1>
+    </header>
+    <div id="profileName">User</div>
+  <div id="chats">
+    <div id="tab">
+      <ul id="messages">
+        <!-- For Messages-->
+      </ul>
+    </div>
+    <div class="username">Name:</div>
+
+    <form id="form">
+      <input type="text" id="messageInput" placeholder="Type your message..." required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <div id="back"><a href="callchat.html">Back</a></div>
+
+  <script>
+      function selectContact(element) {
+    const selectedName = element.innerText; // Get the clicked contact's name
+    document.getElementsByClassName("username")[0].innerText = selectedName;
+  
+  // remove 'active' class from all buttons
+  document.querySelectorAll(".cont").forEach(btn => btn.classList.remove("active"));
+  // add 'active' class to selected button
+  element.classList.add("active");
+}
+  </script>
+  <!--Check script2.js-->
+</body>
+</html>

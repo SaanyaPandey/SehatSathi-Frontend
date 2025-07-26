@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SehatSathi - Login</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <h1>Login to SehatSathi</h1>
+  <div class="container">
+    <form onsubmit="goToMain(); return false;">
+      <div class="forms" >
+        <label>UserName: <input type="email" name="email" id="username" placeholder="Your email" required> </label>
+      </div>
+      <div class="pass">
+      <div class="forms">
+        <label>Password: <input type="password" name="password" id="password" placeholder="password" minlength="6" maxlength="15" required> </label>
+      <span class="toggle-password" onclick="showPassword()">👁️</span>
+      </div>
+      </div>
+      <button id="login" type="submit" >Login</button>
+    </form>
+  
+  <p>Don't have an ACCOUNT?</p><br>
+  <a href="register.html" target="_self">Click here to Register.</a></div>
+ 
+<script>
+  function showPassword() {
+    const passwordInput = document.getElementById("password");
+    const icon = document.querySelector(".toggle-password");
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      icon.textContent = "🙈";
+    } else {
+      passwordInput.type = "password";
+      icon.textContent = "👁️";
+    }
+  }
+
+  async function goToMain() {
+    const email = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Login successful!");
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        window.location.href = "main.html"; // Redirect
+      } else {
+        alert(data.error || "Login failed");
+      }
+    } catch (err) {
+      console.error("Server error:", err);
+      alert("Server error");
+    }
+  }
+</script>
+
+      
+   
+
+</body>
+</html>

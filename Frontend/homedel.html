@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SehatSathi- Home Delivery Form</title>
+  <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+  <h1>Delivery Of Medicines</h1>
+  <p id="start">This form should be filled to access the required medicines from the nearby Pharmacy Store.</p>
+  <form>
+    <div class="key">
+      <label>Address: <input type="text" name="address" id="address" placeholder="Your Address" required> </label>
+    </div>
+    <div class="key">
+      <label>Phone Number:<input type="tel" name="Phone-Number" id="phoneNumber" placeholder="Your Phone Number" maxlength="10" required> </label>
+    </div>
+    <div class="key">
+      <label>Name of the Medicines:<textarea name="medicines" id="medicines"></textarea> </label>
+    </div>
+    <button id="submit" type="submit" onclick="alert('Your Form has been submitted successfully.You will be notified by us soon then you can collect the specified medicines from the local pharmacy store which is nearest to you.')">Submit</button>
+  </form>
+  <div id="back"><a href="main.html">Back to MAIN</a></div>
+   
+</body>
+</html>

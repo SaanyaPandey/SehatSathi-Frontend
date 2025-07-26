@@ -1,0 +1,135 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-image: url(https://st2.depositphotos.com/36924814/46071/i/450/depositphotos_460713580-stock-photo-medical-health-blue-cross-neon.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+#logo{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-top: 80px;
+  margin-left: 30px;
+  display: inline-block;
+}
+.heading{
+  font-size: 130px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #FBF5DE;
+  display: inline-block;
+}
+.heading{
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.heading:hover {
+  transform: scale(1.1);
+}
+
+#tagline{
+  color: floralwhite;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+#description{
+  color: cornsilk;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.imp{
+  color: bisque;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 30px;
+  margin-top: 10px;
+  font-size: 35px;
+}
+.images {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+img{
+  border-radius: 20%;
+  display:inline;
+}
+#img1 , #img4{
+  height: 200px;
+  width: 150px;
+}
+#img2 , #img3{
+  height: 150px;
+  width: 200px;
+}
+#img1{
+  position: absolute;
+  top: 40px;
+  right: 250px;
+}
+#img2{
+  position: absolute;
+  top: 90px;
+  right:30px;
+}
+#img3{
+  position: absolute;
+  top:250px;
+  right:250px;
+}
+#img4{
+  position: absolute;
+  top: 250px;
+  right: 90px;
+}
+.images{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.hov{
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.hov:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px 8px rgba(102, 126, 234, 0.6); 
+}
+
+#login{
+  background-color: #FFF9BD;  
+  color: #3D74B6;
+  border: none;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
+  letter-spacing: 0.5px;
+  margin-top: 70px;
+  margin-left: 30px;
+}
+
+#login:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px 6px rgba(108, 99, 255, 0.6);
+  background-color: #7c74ff; 
+}
+

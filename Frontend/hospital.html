@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nearby Hospitals - SehatSathi</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+    }
+    h2 {
+      text-align: center;
+      margin: 20px;
+      color: #2b6777;
+    }
+    #map {
+      height: 80vh;
+      width: 90%;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    #back {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+#back a {
+  text-decoration: none;
+  color: white;
+  background-color: #4CAF50;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#back a:hover {
+  background-color: #388E3C;
+}
+
+  </style>
+</head>
+<body>
+
+  <h2>Nearby Hospitals</h2>
+  <div id="map"></div>
+  <div id="back"><a href="main.html">Back to MAIN</a></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- JS to load map -->
+  <script>
+    // Get user's location
+    navigator.geolocation.getCurrentPosition(function(position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+
+      // Init map
+      const map = L.map("map").setView([lat, lon], 14);
+
+      // Load map tiles
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; OpenStreetMap contributors',
+      }).addTo(map);
+
+      // Show user location
+      const userMarker = L.marker([lat, lon])
+        .addTo(map)
+        .bindPopup("You are here")
+        .openPopup();
+
+      // Define map boundary to search hospitals around user
+      const viewbox = `${lon - 0.02},${lat + 0.02},${lon + 0.02},${lat - 0.02}`;
+
+      // Nominatim API call
+      const apiUrl = `https://nominatim.openstreetmap.org/search?format=json&q=hospital&limit=10&bounded=1&viewbox=${viewbox}`;
+
+      fetch(apiUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          data.forEach((place) => {
+            L.marker([place.lat, place.lon])
+              .addTo(map)
+              .bindPopup(`<b>${place.display_name}</b>`);
+          });
+        })
+        .catch((err) => {
+          console.error("Failed to fetch hospitals", err);
+        });
+    }, function(error) {
+      alert("Please enable location access for this feature to work.");
+    });
+  </script>
+</body>
+</html>

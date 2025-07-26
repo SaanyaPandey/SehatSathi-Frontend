@@ -1,0 +1,101 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/004/449/845/small_2x/abstract-geometric-medical-cross-shape-medicine-and-science-concept-background-medicine-medical-health-cross-healthcare-decoration-for-flyers-poster-web-banner-and-card-illustration-vector.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:100vh;
+  margin-left: 20px;
+}
+h1{
+  text-align: center;
+  font-size: 70px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
+  margin-top: 60px;
+  color: black;
+}
+#start{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgba(233, 8, 8, 0.923);
+  text-align: center;
+  margin-top:20px;
+}
+.key{
+  margin-top: 30px;
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+}
+input,
+textarea {
+  font-size: 30px;
+  padding: 12px 18px; /* 👈 more space inside the box */
+  height: auto; /* let it grow as per content */
+  border-radius: 10px;
+  width: 80%;
+  margin-top: 10px;
+  border: 2px solid #aaa;
+}
+
+/* Match placeholder font size with input font size */
+input::placeholder,
+textarea::placeholder {
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  color: #888; /* optional: softer color */
+}
+
+/* Glow border on focus */
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 2px solid #2b6777; /* glowing border color */
+  box-shadow: 0 0 8px rgba(43, 103, 119, 0.7);
+  background-color: #f9f9f9;
+}
+#submit{
+  background-color: #FFF9BD;  
+  color: #3D74B6;
+  border: none;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
+  letter-spacing: 0.5px;
+  margin-top: 30px;
+  margin-left: 0px;
+}
+
+#submit:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px 6px rgba(108, 99, 255, 0.6);
+  background-color: #7c74ff; 
+}
+#back {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+#back a {
+  text-decoration: none;
+  color: white;
+  background-color: #4CAF50;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#back a:hover {
+  background-color: #388E3C;
+}

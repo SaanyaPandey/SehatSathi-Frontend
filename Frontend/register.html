@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SehatSathi – Register</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <img  class="heading" id="logo" src="logo.png" alt="SehatSathi Logo">
+  <h1 class="heading">Register Yourself on SehatSathi</h1>
+  <div class="details"><p class="description">Please fill the form below to create your account as a Doctor or a Patient.</p></div>
+
+  <form id="registerForm">
+
+
+ <div class="details">
+    <label><h3>Register as:</h3></label><br>
+    <span> <input type="radio" name="role" value="patient" checked> Patient
+    <input type="radio" name="role" value="doctor"> Doctor</span>
+    <br><br>
+
+  
+    <label>Full Name:<input type="text" name="fullname" placeholder="Full Name" required id="name"></label><br><br>
+    <label>Email:<input type="email" name="email" placeholder="Email Address" required id="email"></label><br><br>
+    <label>Phone Number:<input type="tel" name="phone" placeholder="Phone Number" required id="phonenum"> </label><br><br>
+    <label>
+      Password:
+      <input type="password" name="password" placeholder="Password" id="password" required minlength="6" maxlength="15">
+      <span class="visibility" onclick="showPassword('password', this)">👁️</span>
+    </label>
+<br><br>
+
+    <label>
+       Confirm Password:
+       <input type="password" name="confirm" placeholder="Confirm Password" id="confirm" required>
+       <span class="visibility" onclick="showPassword('confirm', this)">👁️</span>
+    </label>
+<br><br></div>
+
+
+    <hr><br>
+
+  <div class="details">
+    
+    <h3>Doctor Details (fill if registering as Doctor)</h3><br><br>
+    <label>Medical Degree<input type="text" name="degree" placeholder="Medical Degree" id="medical-degree" required></label><br><br>
+    <label>Specialization<input type="text" name="specialization" placeholder="Specialization" id="specialization" required></label><br><br>
+    <label>Medical Registration Number:<input type="text" name="regno" placeholder="Medical Registration Number" id="reg-no"></label><br><br>
+    <label>Experience (in years)<input type="number" name="experience" placeholder="Years of Experience" id="exp" required></label><br><br>
+    <label for="idproof" required><strong>Upload Valid Doctor ID Proof (PDF / Image):</strong></label><br>
+    <input type="file" id="idproof" name="idproof" accept=".jpg, .jpeg, .png, .pdf" required><br><br>
+    <p id="upload">You have to upload valid id proof for this so that we can verify then only you can get access.</p>
+
+
+   </div>
+    <br><hr><br>
+   <div class="details">
+    
+    <h3>Patient Details (fill if registering as Patient)</h3><br><br>
+      <label>Age<input type="number" name="age" placeholder="Age" id="age" required></label><br><br>
+      <label>Gender<select name="gender" id="gender" required>
+        <option selected disabled>Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select><br><br></label>
+      <label>Blood Group:<input type="text" name="blood" placeholder="Blood Group" id="blood-group" required></label><br><br>
+      <label>Previous Medical History (if any):<textarea name="history" placeholder="Medical History (optional)"></textarea></label><br><br>
+
+   
+    <button id="register" type="submit" >Register</button>
+    <p id="end">Already have an account? <a href="login.html" target="_self">Login here</a></p> </div>
+
+  </form>
+
+  <script>
+  const form = document.getElementById("registerForm");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const role = document.querySelector("input[name='role']:checked").value;
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirm = document.getElementById("confirm").value;
+
+    if (password !== confirm) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    const formData = {
+      role,
+      name,
+      email,
+      password,
+    };
+
+    if (role === "doctor") {
+      formData.medicalDegree = document.getElementById("medical-degree").value;
+      formData.specialization = document.getElementById("specialization").value;
+      formData.registrationNumber = document.getElementById("reg-no").value;
+      formData.experience = document.getElementById("exp").value;
+      formData.idProof = document.getElementById("idproof").value; // Just file name (not actual upload)
+    }
+
+    if (role === "patient") {
+      formData.age = document.getElementById("age").value;
+      formData.gender = document.getElementById("gender").value;
+      formData.bloodGroup = document.getElementById("blood-group").value;
+      formData.medicalHistory = document.querySelector("textarea[name='history']").value;
+    }
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Registration successful!");
+        window.location.href = "login.html";
+      } else {
+        alert(data.error || "Registration failed");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Server Error");
+    }
+  });
+
+
+  function showPassword(inputId, iconElement) {
+    const input = document.getElementById(inputId);
+
+    if (input.type === "password") {
+      input.type = "text";
+      iconElement.textContent = "🙈";
+    } else {
+      input.type = "password";
+      iconElement.textContent = "👁️";
+    }
+  }
+  const patientFields = document.querySelectorAll('#age, #gender, #blood-group, textarea[name="history"]');
+  const doctorFields = document.querySelectorAll('#medical-degree, #specialization, #reg-no, #exp, #idproof');
+  const roleRadios = document.getElementsByName("role");
+
+  function toggleFields() {
+    const selectedRole = document.querySelector('input[name="role"]:checked').value;
+
+    if (selectedRole === "doctor") {
+      // Enable doctor fields
+      doctorFields.forEach(field => field.disabled = false);
+      // Disable patient fields
+      patientFields.forEach(field => field.disabled = true);
+    } else {
+      // Enable patient fields
+      patientFields.forEach(field => field.disabled = false);
+      // Disable doctor fields
+      doctorFields.forEach(field => field.disabled = true);
+    }
+  }
+
+  // Initial call
+  toggleFields();
+
+  // Add event listener
+  roleRadios.forEach(radio => {
+    radio.addEventListener('change', toggleFields);
+  });
+
+</script>
+
+
+</body>
+</html>

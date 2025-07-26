@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home-SehatSathi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <img  class="heading" id="logo" src="logo.png" alt="SehatSathi Logo">
+  <h1 class="heading">SehatSathi</h1>
+  <div class="container">
+  <div class="main">
+    <i id="book" class="fa-solid fa-book fa-3x" style="color: #63E6BE;"></i>
+    <h3 class="div-head">About SehatSathi</h3>
+    <p class="div-desc">"SehatSathi bridges the gap between patients and verified healthcare services."<br>
+      <a href="about.html">Read More.</a>
+    </p>
+  </div>
+  <div class="main">
+    <i id="chat" class="fa-solid fa-link fa-3x" style="color: #B197FC;"></i>
+    <h3 class="div-head">Contact Doctor</h3>
+    <p class="div-desc">Instantly connect with doctors .<br>
+      <a href="callchat.html">Try Now</a>
+    </p>
+  </div>
+  
+  <div class="main">
+    <i id="perscription" class="fa-solid fa-file-medical fa-3x" style="color: #FFD43B;"></i>
+    <h3 class="div-head">First-Aid Consultation</h3>
+    <p class="div-desc">Access to First-Aid in case of Medical Emergency.<br>
+      <a href="first-aid.html">Know More.</a>
+    </p>
+  </div>
+  <div class="main">
+    <i class="fa-solid fa-hospital fa-3x" style="color: #25511f;"></i>
+    <h3 class="div-head">Find Hospitals</h3>
+    <p class="div-desc">Find nearby Hospitals and Healthcare centres.<br>
+      <a href="hospital.html">Get Maps</a>
+    </p>
+  </div>
+  <div class="main">
+    <i class="fa-solid fa-pills fa-3x" style="color: #74C0FC;"></i>
+    <h3 class="div-head">Medicine Delivery</h3>
+    <p class="div-desc">Get medicines delivered to your nearest pharmacy store for better service.<br>
+      <a href="homedel.html">Click to apply.</a>
+    </p>
+  </div>
+  <div class="main">
+    <i class="fa-solid fa-user fa-3x" ></i>
+    <h3 class="div-head">Your Profile</h3>
+    <p class="div-desc">View and Edit your Profile.<br>
+      <a href="profile.html">See Your Profile</a>
+    </p>
+  </div>
+  </div>
+  <button id="logout" type="submit" onclick="goToLogin()">Log-OUT</button>
+  <footer>
+    <div class="footer">
+      <h3 id="foot-head">Contact Us:</h3>
+      <p class="foot">Mail to: <a href="helpdesk@sehatsathi.in">helpdesk@sehatsathi.in</a></p>
+      <p class="foot">Phone Number:(+91) 9876543201 </p>
+      <p class="foot">Address: ABC City, XYZ State , India</p>
+      <p class="foot">&copy; 2025 SehatSathi. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+<script>
+  function goToLogin() {
+    localStorage.removeItem('token'); // Logout pe token hatao
+    localStorage.removeItem('user');  // User data bhi hatao
+    window.location.href = "login.html";
+  }
+
+  // ✅ On Page Load: Show user name
+  window.onload = function () {
+    const userData = localStorage.getItem("user");
+
+    if (!userData) {
+      alert("Please login first!");
+      window.location.href = "login.html";
+      return;
+    }
+
+    const user = JSON.parse(userData);
+
+    const welcome = document.createElement("h2");
+    welcome.innerText = `Welcome, ${user.name}!`;
+    welcome.style.textAlign = "center";
+    welcome.style.color = "#008000";
+    welcome.style.marginTop = "10px";
+
+    document.body.insertBefore(welcome, document.querySelector(".container"));
+  };
+</script>
+
+</html>

@@ -1,0 +1,115 @@
+*{
+  margin: 0;
+  padding:0 ;
+}
+html{
+  background-image: url(https://static.vecteezy.com/system/resources/previews/023/639/130/non_2x/molecular-structure-with-hospital-cross-for-medical-chemistry-and-science-concept-background-illustration-vector.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+h1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 80px;
+  font-weight: bolder;
+  font-style: normal;
+  color: black;
+  display: block;
+  text-align: center;
+}
+.container{
+  position: absolute;
+  right: 520px;
+  top:110px;     
+}
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.forms {
+  margin-bottom: 20px;
+}
+label{
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  font-weight: bold;
+}
+.forms input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.forms input:focus {
+  border-color: #7f7fff;
+  box-shadow: 0 0 8px rgba(127, 127, 255, 0.3);
+}
+
+.pass input {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 45%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+}
+
+#login{
+  background-color: #9ECAD6;  /* Purple-blue tone */
+  color: #320A6B;
+  border: none;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+#login:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px 6px rgba(108, 99, 255, 0.6);
+  background-color: #7c74ff; /* lighter on hover */
+}
+p{
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  color: black;
+  margin-top: 20px;
+}
+a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #4a4aff; 
+  transition: all 0.3s ease;
+}
+a:hover {
+  font-size: 25px;
+  text-shadow: 0 0 10px rgba(127, 127, 255, 0.6); 
+  color: #3a3aff; 
+}
+
+

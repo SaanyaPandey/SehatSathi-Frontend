@@ -1,0 +1,94 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  background-image: url(https://img.freepik.com/free-vector/blue-polygonal-shapes-background_1053-434.jpg?semt=ais_hybrid&w=740);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#back {
+  position: absolute;
+  top: 160px;
+  right: 20px;
+  z-index: 999;
+}
+
+#back a {
+  text-decoration: none;
+  color: white;
+  background-color: #4CAF50;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#back a:hover {
+  background-color: #388E3C;
+}
+h1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
+  font-size: 70px;
+  text-align: center;
+  background-color: aquamarine;
+}
+.contact-list{
+  position: absolute;
+  left:0;
+  bottom:0;
+  top: 85px;
+  background-color: #4CAF50;
+  width: 350px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+  text-align: center;
+}
+.call{
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+.username{
+  position: absolute;
+  top: 85px;
+  left: 350px;
+  background-color: darkgray;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+  font-weight: bold;
+  color:floralwhite;
+  height: 55px;
+}
+button{
+  width: 350px;
+}
+.cont {
+  background-color: #ffffff;
+  color: #333;
+  border: 2px solid #4bfb28;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cont:hover {
+  background-color: #eaffea;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #4bfb28;
+}
+.cont.active {
+  background-color: #d7ffd7;
+  box-shadow: 0 0 20px #4bfb28;
+  transform: scale(1.08);
+}
+
+

@@ -1,0 +1,96 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  background-image: url(https://img.freepik.com/free-vector/watercolour-green-background_78370-1882.jpg?semt=ais_hybrid&w=740);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.heading {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 70px;
+  color: #3E5F44;
+  text-decoration: underline;
+}
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 40px 60px;
+  justify-items: center;
+}
+.container {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  width: 220px;
+  height: 220px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.head {
+  font-size: 30px;
+  color: #FBF5DE;
+  text-align: center;
+  font-weight: 600;
+}
+
+.container:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px #320A6B;
+  background-color: #e6f7ff;
+}
+/* Responsive layout*/ 
+@media (max-width: 992px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
+.container .desc {
+  display: none;
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+  margin-top: 10px;
+  padding: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.container:hover .desc {
+  display: block;
+}
+#back {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+#back a {
+  text-decoration: none;
+  color: white;
+  background-color: #4CAF50;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#back a:hover {
+  background-color: #388E3C;
+}

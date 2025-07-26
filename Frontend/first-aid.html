@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>:SehatSathi: First-Aid Guide </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+  <h1 class="heading">SehatSathi First-Aid Assistance</h1>
+  <div class="main">
+    <div class="container" onclick="showDescription(this)">
+      <i class="fa-solid fa-fire-flame-curved fa-3x" style="color: #FFD43B;"></i>
+      <p class="head">Burns</p>
+      <div class="desc">
+        Cool the burn with clean running water for at least 10 minutes.  <br>
+        Do not use ice, butter, or creams.  <br>
+        Cover the burn loosely with a clean, non-stick cloth and seek medical help if needed.<br>
+      </div>
+    </div>
+    <div class="container" onclick="showDescription(this)">
+      <i class="fa-solid fa-droplet fa-3x" style="color: #ec4109;"></i>
+      <p class="head">Bleeding</p>
+      <div class="desc">
+        Apply direct pressure on the wound using a clean cloth or bandage. <br> 
+        If possible, elevate the injured area. <br> 
+        Do not remove soaked bandages—add more layers if needed.
+      </div>
+    </div>
+    <div class="container" onclick="showDescription(this)">
+      <i class="fa-solid fa-user-minus fa-3x"></i>
+      <p class="head">Choking</p>
+      <div class="desc">
+        Encourage the person to cough. <br> 
+        If not breathing, perform 5 back blows followed by 5 abdominal thrusts (Heimlich maneuver). <br> 
+        Call emergency services immediately if the object does not dislodge.
+      </div>
+    </div>
+    <div class="container" onclick="showDescription(this)">
+      <i class="fa-regular fa-face-dizzy fa-3x" style="color: #B197FC;"></i>
+      <p class="head">Faint</p>
+      <div class="desc">
+        Help the person lie down flat and raise their legs slightly. <br> 
+        Loosen any tight clothing.  <br>
+        If unconscious for more than a minute, seek medical help immediately.
+      </div>
+    </div>
+    <div class="container" onclick="showDescription(this)">
+      <i class="fa-solid fa-disease fa-3x" style="color: #5d5c60;"></i>
+      <p class="head">Snake-Bite</p>
+      <div class="desc">
+        Keep the person calm and still.  <br>
+        Do not suck out venom or apply a tourniquet. <br> 
+        Immobilize the bitten area and seek emergency medical help immediately.
+      </div>
+    </div>
+    <div class="container" onclick="showDescription(this)">
+      <i class="fa-solid fa-bug fa-3x" style="color: #567a3e;"></i>
+      <p class="head">Insect / Bee Sting</p>
+      <div class="desc">
+        Remove the stinger gently if visible (scrape, don’t pinch).  <br>
+        Wash the area with soap and water.  <br>
+        Apply a cold compress to reduce swelling.
+      </div>
+    </div>
+    <div class="container" onclick="showDescription(this)">
+      <i class="fa-solid fa-heart-pulse fa-3x" style="color: #d14f2e;"></i>
+      <p class="head">Heart Attack</p>
+      <div class="desc">
+        Symptoms include chest pain, breathlessness, nausea, and sweating.  <br>
+        Call emergency services immediately.  <br>
+        Help the person sit comfortably and stay calm. If available, give aspirin.
+      </div>
+    </div>
+    <div class="container" onclick="showDescription(this)">
+      <i class="fa-solid fa-bone fa-3x" style="color: #f5f7fa;"></i>
+      <p class="head">Fracture</p>
+      <div class="desc">
+        Do not try to move or straighten the broken bone.  <br>
+        Immobilize the area with a splint or support.  <br>
+        Apply ice packs to reduce swelling and seek immediate medical help. 
+      </div>
+    </div>
+    <div class="container" onclick="showDescription(this)">
+      <i class="fa-solid fa-bolt fa-3x" style="color: #FFEAEA;"></i>
+      <p class="head">Electric Shock</p>
+      <div class="desc">
+        Turn off the power source before touching the person.  <br>
+        Do not use bare hands.  <br>
+        Check for breathing and pulse. If unresponsive, begin CPR and call emergency help.
+      </div>
+    </div>
+    <div class="container" onclick="showDescription(this)">
+      <i class="fa-solid fa-people-arrows fa-3x" style="color: #13eca4;"></i>
+      <p class="head">Siezure</p>
+      <div class="desc">
+        Protect the person from injury—move nearby objects.  <br>
+        Do not restrain or put anything in their mouth.  <br>
+        After the seizure, place them on their side and check for breathing.
+      </div>
+    </div>
+    <div class="container"  onclick="showDescription(this)">
+      <i class="fa-solid fa-temperature-full fa-3x" style="color: #51511f;"></i>
+      <p class="head">Fever / HeadStroke</p>
+      <div class="desc">
+        Move the person to a cool area.  <br>
+        Give water in small sips and apply a cool damp cloth.  <br>
+        If the fever is very high or heatstroke symptoms persist, seek medical attention.
+      </div>
+    </div>
+    <div class="container" onclick="showDescription(this)">
+      <i class="fa-solid fa-droplet-slash fa-3x" style="color: #ea3406;"></i>
+      <p class="head">NoseBleed</p>
+      <div class="desc">
+        Pinch the soft part of the nose and lean forward.  <br>
+        Do not tilt the head back.  <br>
+        Hold for 10 minutes and repeat if necessary. Seek help if bleeding lasts more than 20 minutes.
+      </div>
+    </div>
+  </div>
+  <div id="back"><a href="main.html">Back to MAIN</a></div>
+  <script>
+  function showDescription(tile) {
+    tile.classList.toggle("show-desc");
+  }
+</script>
+
+
+</body>
+</html>
